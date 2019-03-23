@@ -1,0 +1,101 @@
+
+
+GIT Bash  -- Terminal de comandos
+
+    Comandos:  pwd   - mostra a pasta onde estou posicionado
+               clear - limpa tela de comandos
+
+
+Comandos GIT:
+
+git config  >>   git config --global user.name  "Luiz Claudio"
+                 git config --global user.email "luiz.claudio@deak.com.br"
+                 git config user.name    (para consultar um paramentro)
+
+git init    >>   git init
+
+git status
+
+git add
+
+git commit
+
+git log
+
+git diff      >> git diff 
+
+git checkout  >> git checkout <um pedaco da hash minimo 8 caracteres>   (navega para um commit especifico)
+                 git checkout master  (volta para o ponto master) 
+                 git checkout v1.0    (Navega para uma tag especifica)
+                 git checkout dev     (Navega para uma branch especifica)
+
+git revert
+
+git reset     >> git reset HEAD arquivo1.txt (retira o arquivo do add (stage area)) 
+                 git reset --hard HEAD~1     (volta para um commit especifico e apaga tudo realizado apos o ponto de retorno)
+                 git reset --soft HEAD~1     (volta para um commit especifico, mas todas as alteraçoes permanecem para novo commit)
+                 git reset --mixed HEAD~1    (volta para um commit especifico, mas todas as alteraçoes permanecem, sem fazer add automaticamente)
+
+git clean     >> git clean -fd (forca delecao e diretorios)
+git reflog    >> mostra um resumo de todos os commit realizados
+
+git stash     >> git stash        (move as alteracoes para uma area e para o Git fica sem modificacoes)
+                 git stash list   (consulta todos a pilha de stash armazenadas)
+                 git stash 0      (retorna um stash espifico da lista) o mais adequado de ser utilizado
+                 git stash apply  (retorna o ultimo stash, porem o stash permanece na lista de stashs)
+                 git stash pop    (retorna o ultimo stash e remove o stash da lista de stashs)
+
+git tag       >> git tag v1.0     (Renomeia a commit da HEAD para um determinado nome) neste comando assume commit atual (HEAD)
+                 git tag          (lista as tags existente)
+                 git tag -d v1.0  (apaga a tag informada)
+
+BRANCH        >> Linhas do tempo existente no projeto, sempre teremos no minimo a (Master)
+
+git branch    >> git branch dev   (criamos uma branch para desenvolvimento, e sempre teremos a Master)
+                 git branch       (lista as branchs existentes e destaca a que nós estamos posicionados)
+                                  (Para trocar entre as branchs usa o comando checkout dev)                  
+                 git branch -d dev  (-d minusculo não permite apagar se houver alterações pendentes)
+                 git branch -D dev  (-D maiusculo apaga mesmo havendo alterações pendentes)
+
+
+git checkout -b dev >> Cria a branch e ja faz o checkout para ela
+
+git merge     >> git merge dev      (Mescla as alterações entre o HEAD e a branch informada pelo identificador)
+
+git cherry-pick >> git cherry-pick <identificador> (merge de um commit especifico)
+
+git blame     >> git blame arquivo1.txt   (mostra todas as linhas do arquivo e quem fez a ultima movimentacao).
+
+touch .gitignore   (Comando linux que cria um arquivo na pasta atual)
+
+.gitignore    >> Arquivo .gitignore contem os arquivos que serão ignorados pelo versionador.
+                 abacaxi      - ignora qualquer arquivo ou pasta com esse nome
+                 /abacaxi.jpg - ignora apenas o arquivo abacaxi.jpg na raiz do projeto
+                 *.dll        - ignora todos os arquivos .dll
+
+site gitignore.io  (gera o arquivo .gitignore conforme tipo de linguagem utilizada)
+  
+
+------------------
+Remote Repositorie
+------------------
+
+GitHub     (Gestao de acesso)     douglascabral
+Bitbucket
+GitLab     (Gestao de acesso)
+
+Em uma nova, clique direito (Git Bash Here)
+git clone    >> git clone https://github.com/douglascabral/kalendorius.git
+                Baixa uma copia uma copia do projeto/arquivos para minha maquina
+
+git remote   >> git remote add origin https://github.com/lucaper/shift
+                git remote -v
+
+git push     >> git push origin --all
+
+git pull     >> git pull origin master   (baixa atualizacao do repositorio branch master)
+
+
+
+
+
